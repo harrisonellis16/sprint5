@@ -1,0 +1,35 @@
+body {
+    /* background-image: url('../../images/home_background.jpg'); */
+    background-image: url('../../home_background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vw;
+
+}
+
+h1 {
+    color: white;
+    font-size: 5.5vh;
+}
+
+.text{
+    color: white;
+    font-size: 3vh;
+    
+}
+
+hr{
+    background-color: white;
+}
+
+.body{
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    height: 200px;
+    width:30%;
+}
+
+.button{
+    margin-right: 20px;
+}

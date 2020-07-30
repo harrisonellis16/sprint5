@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App';
 import Header from './Components/Header/header'
 import Whack from './Components/Game/whack'
 import Mapping from './Components/Mapping/mapping'
+import About from './Components/About/about'
+
 import FourOhFour from './Components/FourOhFour/fourOhFour'
 
 
@@ -21,6 +24,7 @@ const myRoutes = (
         <Route exact path='/' component={App} />
         <Route path='/game' component={Whack} />
         <Route path='/mapping' component={Mapping} />
+        <Route path='/about' component={About} />
         <Route component={FourOhFour} />
       </Switch>
     </div>
