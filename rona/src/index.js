@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import Header from './Components/Header/header'
 import Whack from './Components/Game/whack'
+import Leaderboard from './Components/Leaderboard/leaderboard'
 import Mapping from './Components/Mapping/mapping'
 import About from './Components/About/about'
 
@@ -23,6 +24,7 @@ const myRoutes = (
       <Switch>
         <Route exact path='/' component={App} />
         <Route path='/game' component={Whack} />
+        <Route path='/leaderboard' component={Leaderboard} />
         <Route path='/mapping' component={Mapping} />
         <Route path='/about' component={About} />
         <Route component={FourOhFour} />
