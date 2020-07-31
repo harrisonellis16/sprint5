@@ -1,6 +1,5 @@
 .body-container {
-    /* background-image: url('../../images/home_background.jpg'); */
-    background-image: url('../../home_background.jpg');
+    background-image: url('../../home_cropped.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -22,7 +21,6 @@ h2 {
 .text{
     color: white;
     font-size: 3vh;
-    
 }
 
 hr{

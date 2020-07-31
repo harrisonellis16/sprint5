@@ -1,0 +1,41 @@
+.game-container {
+    padding-top: 15%;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(100, 150, 181);
+    text-align: center;
+    
+}
+
+.game-container-full {
+    padding-top: 15%;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(100, 150, 181);
+    text-align: center;
+    position: relative;
+    z-index: 100;
+}
+
+.game-start-title {
+
+}
+
+.corona-button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+   
+}
+
+.game-timer {
+    position: absolute;
+    top: 2%;
+    left: 2%;    
+}
+
+.game-score {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}

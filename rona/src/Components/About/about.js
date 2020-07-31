@@ -6,12 +6,17 @@ class About extends React.Component {
 
     render() {
         return (
-            <div className='body-container'>
-                <div className="body">
-                    <h1>Welcome!</h1>
+            <div>
+                <div>
+                    <h2>Marcelo Cueva</h2>
                     <hr />
-                    <div className="text"> Whack-A-Rona is a place were you can relieve some stress durning these crazy times.
-                You can also look up the closest COVID testing sites near your Ally Office Location.</div>
+                    <div> 
+                    Marcelo recently graduated from the University of North Carolina at Charlotte with a 
+                    Bachelor of Science in Computer Science. At UNC Charlotte, he worked as a Junior System 
+                    Administrator. He interned with Ally last summer with the Enterprise Monitoring team. 
+                    He will be joining the Cloud Enablement team and is excited to re-join the Ally family. 
+                    In his free time, Marcelo enjoys hiking, watching soccer, and learning about personal finance.
+                    </div>
                     <br />
                 </div>
             </div>
