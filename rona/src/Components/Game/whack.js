@@ -253,7 +253,7 @@ class Whack extends React.Component {
                             src={corona}
                             onClick={() => this.coronaHit(5)}
                         />
-                        <h2 className="game-timer">Time: {(60 - this.state.time).toFixed(1)}</h2>
+                        <h2 className="game-timer">Time: {(30 - this.state.time).toFixed(1)}</h2>
                         <h2 className="game-score">Score: {this.state.score}</h2>
                     </div>
                 }
