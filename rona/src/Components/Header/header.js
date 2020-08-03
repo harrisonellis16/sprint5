@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button, Navbar, NavDropdown, Nav, Form, FormC, LinkContainer } from 'react-bootstrap'
+import { Navbar, NavDropdown, Nav } from 'react-bootstrap'
 import './header.css'
+import corona from '../../corona-removebg-preview.png';
 
 
 class Header extends React.Component {
@@ -10,7 +11,9 @@ class Header extends React.Component {
         return (
             
             <Navbar className="bar-whole" variant="dark" bg="dark" expand="lg">
-                <Navbar.Brand href="/">Whack-a-Rona</Navbar.Brand>
+                <Navbar.Brand href="/">
+                <img className="logo" src={corona} width="40" height="40" alt="" class="d-inline-block align-top" />
+                    Whack-a-Rona</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="bar-right">

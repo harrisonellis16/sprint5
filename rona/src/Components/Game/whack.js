@@ -1,6 +1,6 @@
 import React from 'react';
 import './whack.css';
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import corona from '../../corona-removebg-preview.png';
 
 class Whack extends React.Component {
@@ -8,6 +8,7 @@ class Whack extends React.Component {
     state = {
         score: 0,
         time: 0.0,
+        gameLength: 10,
         gameIsLive: false,
         gameOver: false,
         user: "",
@@ -83,7 +84,7 @@ class Whack extends React.Component {
                     }
 
 
-                    if (this.state.time.toFixed(1) >= 30) {
+                    if (this.state.time.toFixed(1) >= this.state.gameLength) {
                         this.endGame()
                     }
                     else {
@@ -153,8 +154,8 @@ class Whack extends React.Component {
     coronaHit = (number) => {
 
 
-        this.setState({ score: this.state.score + 100 });
-        this.changeVirus(number);
+        this.setState({ score: this.state.score + 100 }, this.changeVirus(number));
+        
     }
 
     endGame = () => {
@@ -167,6 +168,25 @@ class Whack extends React.Component {
 
     }
 
+    createScore = (e) => {
+        e.preventDefault()
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': "Basic dGVzdHVzZXI6dGVzdHBhc3N3b3Jk" },
+            body: JSON.stringify({
+                "score": this.state.score,
+                "userName": this.state.user,
+        })
+        }
+        fetch(`https://whack-a-rona.herokuapp.com/Leaderboard/score`, requestOptions)
+        .then(res => res.json())
+        .then((data) => {
+            this.props.history.push(`/leaderboard/${this.state.user}`)
+            //console.log(data)
+        })
+        .catch(console.log(requestOptions))
+    }
+
     render() {
         return (
             <div className={this.state.gameIsLive ? "game-container-full" : "game-container"}>
@@ -175,13 +195,14 @@ class Whack extends React.Component {
                     <div className="game-start">
                         {
                             this.state.gameOver &&
-                            <div>
+                            <div className="game-over">
                                 <h1>Time is up!</h1>
                                 <h2>Your Score: {this.state.score}</h2>
-
+                                <Form.Control className="user-submit" type="text" placeholder="Enter a Username" value={this.state.user} onChange={(e) => this.setState({user: e.target.value})}/>
+                                <Button variant="primary" onClick={this.createScore}>Submit Score</Button>
                             </div>
                         }
-                        <img src={corona} />
+                        <img src={corona} alt=""/>
                         <h1 className="game-start-title">
                             Play Whack-a-Rona!
                         </h1>
@@ -253,7 +274,7 @@ class Whack extends React.Component {
                             src={corona}
                             onClick={() => this.coronaHit(5)}
                         />
-                        <h2 className="game-timer">Time: {(30 - this.state.time).toFixed(1)}</h2>
+                        <h2 className="game-timer">Time: {(this.state.gameLength - this.state.time).toFixed(1)}</h2>
                         <h2 className="game-score">Score: {this.state.score}</h2>
                     </div>
                 }

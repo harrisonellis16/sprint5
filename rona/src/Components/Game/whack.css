@@ -1,8 +1,9 @@
 .game-container {
     padding-top: 15%;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     width: 100vw;
-    background-color: rgb(100, 150, 181);
+    background-color: #650360;
     text-align: center;
     
 }
@@ -11,7 +12,7 @@
     padding-top: 15%;
     height: 100vh;
     width: 100vw;
-    background-color: rgb(100, 150, 181);
+    background-color: #650360;
     text-align: center;
     position: relative;
     z-index: 100;
@@ -19,6 +20,10 @@
 
 .game-start-title {
 
+}
+
+.game-over {
+    padding-bottom: 10px;
 }
 
 .corona-button {
@@ -38,4 +43,14 @@
     position: absolute;
     top: 2%;
     right: 2%;
+}
+
+.enter-user{
+    width: 10px;
+}
+
+.user-submit{
+    width: 20%;
+    margin: 10px auto;
+
 }

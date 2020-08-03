@@ -24,7 +24,8 @@ const myRoutes = (
       <Switch>
         <Route exact path='/' component={App} />
         <Route path='/game' component={Whack} />
-        <Route path='/leaderboard' component={Leaderboard} />
+        <Route exact path='/leaderboard' component={Leaderboard} />
+        <Route path='/leaderboard/:id' component={Leaderboard} />
         <Route path='/mapping' component={Mapping} />
         <Route path='/about' component={About} />
         <Route component={FourOhFour} />
