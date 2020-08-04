@@ -17,27 +17,32 @@ class Whack extends React.Component {
         covid1: {
             top: 0,
             left: 0,
-            width: 0
+            width: 0,
+            interval: null,
         },
         covid2: {
             top: 0,
             left: 0,
-            width: 0
+            width: 0,
+            interval: null,
         },
         covid3: {
             top: 0,
             left: 0,
-            width: 0
+            width: 0,
+            interval: null,
         },
         covid4: {
             top: 0,
             left: 0,
-            width: 0
+            width: 0,
+            interval: null,
         },
         covid5: {
             top: 0,
             left: 0,
-            width: 0
+            width: 0,
+            interval: null,
         }
     }
 
@@ -53,7 +58,7 @@ class Whack extends React.Component {
 
     startGame = (e) => {
         e.preventDefault();
-
+        this.setState({score : 0})
         this.changeVirus(1);
         this.changeVirus(2);
         this.changeVirus(3);
@@ -63,10 +68,30 @@ class Whack extends React.Component {
         this.setState({
             gameIsLive: true,
             gameOver: false,
+            covid1: {
+                interval:
+                    setInterval(() => this.changeVirus(1), 2000)
+            },
+            covid2: {
+                interval:
+                    setInterval(() => this.changeVirus(2), 2000)
+            },
+            covid3: {
+                interval:
+                    setInterval(() => this.changeVirus(3), 2000)
+            },
+            covid4: {
+                interval:
+                    setInterval(() => this.changeVirus(4), 2000)
+            },
+            covid5: {
+                interval:
+                    setInterval(() => this.changeVirus(5), 2000)
+            },
             interval:
                 setInterval(() => {
 
-                    //console.log((this.state.time.toFixed(1) % 1).toFixed(1))
+                    console.log((this.state.time.toFixed(1) % 1).toFixed(1))
                     if ((this.state.time.toFixed(1) % 1).toFixed(1) == 0.1) {
                         this.changeVirus(1);
                     }
@@ -154,12 +179,17 @@ class Whack extends React.Component {
     coronaHit = (number) => {
 
 
-        this.setState({ score: this.state.score + 100 }, this.changeVirus(number));
-        
+        this.setState({ score: this.state.score + 100 });
+        this.changeVirus(number)
     }
 
     endGame = () => {
         clearInterval(this.state.interval)
+        clearInterval(this.state.covid1.interval)
+        clearInterval(this.state.covid2.interval)
+        clearInterval(this.state.covid3.interval)
+        clearInterval(this.state.covid4.interval)
+        clearInterval(this.state.covid5.interval)
         this.setState({
             time: 0.0,
             gameIsLive: false,
@@ -187,6 +217,10 @@ class Whack extends React.Component {
         .catch(console.log(requestOptions))
     }
 
+    refreshPage() {
+        window.location.reload()
+    }
+
     render() {
         return (
             <div className={this.state.gameIsLive ? "game-container-full" : "game-container"}>
@@ -212,7 +246,7 @@ class Whack extends React.Component {
                     </div>
                 }
 
-                {this.state.gameIsLive &&
+                {this.state.gameIsLive && 
                     <div className="game-window">
                         <img
                             className="corona-button"
@@ -274,6 +308,7 @@ class Whack extends React.Component {
                             src={corona}
                             onClick={() => this.coronaHit(5)}
                         />
+                        <Button className="stop-button" type="submit" variant="primary" onClick={this.refreshPage}>Stop Game</Button>
                         <h2 className="game-timer">Time: {(this.state.gameLength - this.state.time).toFixed(1)}</h2>
                         <h2 className="game-score">Score: {this.state.score}</h2>
                     </div>

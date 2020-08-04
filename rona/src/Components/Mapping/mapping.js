@@ -115,48 +115,48 @@ class Mapping extends React.Component {
                 lat: 42.368000,
                 lng: -83.085488,
                 name: "det2",
-                title: "Henry Ford Hospital",
-                id: "1"
+                title: "1. Henry Ford Hospital",
+                // id: "1"
             },
 
             {
                 lat: 42.345535,
                 lng: -83.057234,
                 name: "det3",
-                title: "Central City Integrated Health",
-                id: "2"
+                title: "2. Central City Integrated Health",
+                // id: "2"
             },
 
             {
                 lat: 42.351216,
                 lng: -82.999293,
                 name: "det4",
-                title: "Health Centers Detroit Medical Group",
-                id: "3"
+                title: "3. Health Centers Detroit Medical Group",
+                // id: "3"
             },
 
             {
                 lat: 35.214925,
                 lng: -80.853769,
                 name: "clt1",
-                title: "BetterMed Urgent Care",
-                id: "1"
+                title: "1. BetterMed Urgent Care",
+                // id: "1"
             },
 
             {
                 lat: 35.213852,
                 lng: -80.844983,
                 name: "clt2",
-                title: "Tryon Medical Partners",
-                id: "2"
+                title: "2. Tryon Medical Partners",
+                // id: "2"
             },
 
             {
                 lat: 35.205154,
                 lng: -80.836384,
                 name: "clt3",
-                title: "Atrium Health Urgent Care",
-                id: "3"
+                title: " 3. Atrium Health Urgent Care",
+                // id: "3"
             }
 
         ]
@@ -200,7 +200,7 @@ class Mapping extends React.Component {
                 hours: " 8AM-6PM Everyday",
                 text: "-Appointment Required \n -Screening Required \n -Antibody Testing: Available",
                 link: "https://www.bettermedcare.com/north-carolina-locations",
-                directions:"1"
+                directions:"https://maps.google.com/?q=1431%20South%20Boulevard,%20Charlotte,%20NC%2028203"
             },
             {
                 title: "2. Tryon Medical Partners",
@@ -226,27 +226,12 @@ class Mapping extends React.Component {
 
             <div className="map-container">
 
-                <div className="col">
-                    <div className="drop-down">
-                        <Form.Group>
-                            <Form.Label className="sub-heading">Choose Ally Office Location</Form.Label>
-                            <Form.Control as="select" value={this.state.location}
-                                onChange={e => this.setState({ location: e.target.value })}>
-                                <option>Ally Detroit</option>
-                                <option>Ally Charlotte</option>
-                            </Form.Control>
-                        </Form.Group>
-                        <div className="sub-heading">
-                            List of Closest COVID-19 Testing Centers
-                        </div>
-                    </div>
-                {this.toggleCards(detCards, cltCards)}
-                </div>
                 
-                <div className="col">
+                
+                <div className="col" id="col2">
                 <Map className="map"
                     google={this.props.google}
-                    zoom={10}
+                    zoom={12}
 
                     initialCenter={{
                         lat: this.state.location == "Ally Detroit" ? this.state.det.lat : this.state.clt.lat,
@@ -279,6 +264,23 @@ class Mapping extends React.Component {
 
                 </Map>
                 </div>
+
+                <div className="col" id="col1"> 
+                    <div className="drop-down">
+                        <Form.Group>
+                            <Form.Label className="sub-heading">Choose Ally Office Location</Form.Label>
+                            <Form.Control as="select" value={this.state.location}
+                                onChange={e => this.setState({ location: e.target.value })}>
+                                <option>Ally Detroit</option>
+                                <option>Ally Charlotte</option>
+                            </Form.Control>
+                        </Form.Group>
+                        <div className="sub-heading">
+                            List of Closest COVID-19 Testing Centers
+                        </div>
+                    </div>
+                {this.toggleCards(detCards, cltCards)}
+                </div>
             </div>
 
 
@@ -287,7 +289,7 @@ class Mapping extends React.Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'key_here'
+    apiKey: 'AIzaSyBYfsMkhcSA_VmQGcCmp5rSScKSNOQ0Zs0'
 })(Mapping);
 
 // <Marker

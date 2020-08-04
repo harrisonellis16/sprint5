@@ -3,9 +3,10 @@
     flex-flow: row wrap;
     padding-top: 10%;
     background-color:#650360;
-    height: 100vh;
-    width: 100vw;
-    color: white;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    color: black;
 }
 
 .globalScores{
@@ -16,11 +17,20 @@
    
 }
 
+.leader-box {
+    background-color: white;
+    border-radius: 25px;
+    width: 80%;
+    margin: 0 10%;
+    padding: 5% 0;
+}
+
 .myScores {
     width: 50%;
     text-align: center;
     height: 100%;
     margin: auto;
+    margin-top: 0;
 }
 
 .score-row {
@@ -53,6 +63,22 @@
 
 .top {
     border-top: none;
+}
+
+.user-find {
+    width: 100%;
+    text-align: center;
+}
+
+.user-find-label {
+    color: black;
+    margin-bottom: 20px;
+}
+
+.user-find-input {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 20px;
 }
 
 

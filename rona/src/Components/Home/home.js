@@ -11,8 +11,8 @@ class Home extends React.Component {
                 <div className="body">
                     <h1>Welcome!</h1>
                     <hr />
-                    <div className="text"> Whack-A-Rona is a place were you can relieve some stress during these crazy times.
-                    You can also look up the closest COVID testing sites near your Ally Office Location.</div>
+                    <div className="text"> Whack-A-Rona is a place where you can relieve some stress during these crazy times.
+                    You can also look up the closest COVID-19 testing sites near your Ally Office Location.</div>
                     <br />
                     <Button className="button" href="/game">Whack-A-Rona</Button>
                     <Button href="/mapping">Ally Find-A-Rona</Button>
