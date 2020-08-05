@@ -15,7 +15,7 @@ class Home extends React.Component {
                     You can also look up the closest COVID-19 testing sites near your Ally Office Location.</div>
                     <br />
                     <Button className="button" href="/game">Whack-A-Rona</Button>
-                    <Button href="/mapping">Ally Find-A-Rona</Button>
+                    <Button className="button" href="/mapping">Ally Find-A-Rona</Button>
                 </div>
             </div>
         )

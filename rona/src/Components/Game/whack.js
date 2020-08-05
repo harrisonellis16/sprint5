@@ -230,13 +230,13 @@ class Whack extends React.Component {
                         {
                             this.state.gameOver &&
                             <div className="game-over">
-                                <h1>Time is up!</h1>
-                                <h2>Your Score: {this.state.score}</h2>
+                                <h1 className="game-start-title">Time is up!</h1>
+                                <h2 className="game-start-title">Your Score: {this.state.score}</h2>
                                 <Form.Control className="user-submit" type="text" placeholder="Enter a Username" value={this.state.user} onChange={(e) => this.setState({user: e.target.value})}/>
                                 <Button variant="primary" onClick={this.createScore}>Submit Score</Button>
                             </div>
                         }
-                        <img src={corona} alt=""/>
+                        <img className="corona-img" src={corona} alt=""/>
                         <h1 className="game-start-title">
                             Play Whack-a-Rona!
                         </h1>

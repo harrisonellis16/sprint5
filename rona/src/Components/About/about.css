@@ -1,10 +1,4 @@
-html {
-    box-sizing: border-box;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
+
   
   .column {
     float: left;
@@ -13,23 +7,34 @@ html {
     align-items: center;
   }
 
+  .about-box {
+    width: 40%;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 10vh;
+  }
+
   .name{
       color: black;
   }
   
-  .card {
+  .card-about{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 10px;
     /* margin: 8px; */
   }
   
   .about-section {
-    padding: 50px;
+    padding: 50px 0;
     text-align: center;
     background-color:#650360;
     color: black;
     height: 100%;
     min-height: 100vh;
-    width: 100vw;
+    display: flex;
+    flex-flow: row wrap;
   }
   
   .container {
@@ -37,18 +42,19 @@ html {
     color:black;
   }
   
-  .container::after, .row::after {
+  /* .container::after, .row::after {
     content: "";
     clear: both;
     display: table;
-  }
+  } */
   
   .title {
     color: grey;
   }
 
   .pic{
-      width: 100%;
+    margin: 10px auto;
+    height: 200px;
   }
 
   .row {
@@ -56,8 +62,8 @@ html {
   }
   
   @media screen and (max-width: 650px) {
-    .column {
-      width: 100%;
-      display: block;
+    .about-box {
+      width: 90%;
+      margin-right: 5%;
     }
   }

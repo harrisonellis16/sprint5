@@ -289,7 +289,7 @@ class Mapping extends React.Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: '---'
+    apiKey: 'AIzaSyBYfsMkhcSA_VmQGcCmp5rSScKSNOQ0Zs0'
 })(Mapping);
 
 // <Marker

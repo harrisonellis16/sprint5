@@ -1,0 +1,44 @@
+[debug] [2020-08-05T20:40:04.986Z] ----------------------------------------------------------------------
+[debug] [2020-08-05T20:40:05.011Z] Command:       C:\Program Files\nodejs\node.exe D:\Users\JZ8M9P\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-08-05T20:40:05.012Z] CLI Version:   8.6.0
+[debug] [2020-08-05T20:40:05.012Z] Platform:      win32
+[debug] [2020-08-05T20:40:05.012Z] Node Version:  v12.18.2
+[debug] [2020-08-05T20:40:05.013Z] Time:          Wed Aug 05 2020 16:40:05 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-08-05T20:40:05.013Z] ----------------------------------------------------------------------
+[debug] [2020-08-05T20:40:05.013Z] 
+[debug] [2020-08-05T20:40:05.039Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-08-05T20:40:05.040Z] > authorizing via signed-in user
+[debug] [2020-08-05T20:40:05.040Z] [iam] checking project whack-a-rona for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-08-05T20:40:05.043Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-08-05T20:40:05.043Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-08-05T20:40:05.188Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 Aug 2020 20:40:05 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-05T20:40:05.197Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/whack-a-rona:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-08-05T20:40:05.340Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 05 Aug 2020 20:40:05 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=120","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-05T20:40:05.341Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project whack-a-rona:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2020-08-05T20:40:05.343Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/whack-a-rona  
+ 
+[debug] [2020-08-05T20:40:05.546Z] <<< HTTP RESPONSE 403 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Wed, 05 Aug 2020 20:40:05 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-08-05T20:40:05.547Z] <<< HTTP RESPONSE BODY {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2020-08-05T20:40:05.548Z] HTTP Error: 403, The caller does not have permission
+[debug] [2020-08-05T20:40:05.587Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (D:\Users\JZ8M9P\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:38:12)
+    at Request._callback (D:\Users\JZ8M9P\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:41:35)
+    at Request.self.callback (D:\Users\JZ8M9P\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:482:12)
+    at Request.<anonymous> (D:\Users\JZ8M9P\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:1154:10)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:482:12)
+    at IncomingMessage.<anonymous> (D:\Users\JZ8M9P\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:1076:12)
+    at Object.onceWrapper (events.js:421:28)
+    at IncomingMessage.emit (events.js:327:22)
+    at IncomingMessage.EventEmitter.emit (domain.js:482:12)
+    at endReadableNT (_stream_readable.js:1221:12)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+[error] 
+[error] Error: Failed to get Firebase project whack-a-rona. Please make sure the project exists and your account has permission to access it.

@@ -81,4 +81,26 @@
     margin-bottom: 20px;
 }
 
+@media screen and (max-width: 500px) {
+    .globalScores{
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-flow: column wrap;
+        margin-top: 20%;
+       
+    }
+    
+    .myScores {
+        width: 100%;
+        text-align: center;
+        height: 100%;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
+    .score-row {
+        width: 70%;
+    }
+  }
