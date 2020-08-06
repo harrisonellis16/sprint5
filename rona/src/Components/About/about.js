@@ -32,7 +32,7 @@ class About extends React.Component {
                         <img src={harrison} alt="Harrison" className="pic" />
                         <div className="container">
                             <h2 className="name">Harrison Ellis</h2>
-                            <p className="title">Early Talent</p>
+                            <p className="title">Developer Experience</p>
                             <p>
                                 Harrison graduated from Virginia Tech in May 2020 with a Bachelor of Science in Computer Science.
                                 He gained fullstack web development experience over the course of two summer internships during college.
